@@ -3,6 +3,8 @@
 ## Source a las dependencias
 
 source functions/colors.def
+source functions/nombres_servicios.def
+source sub_pantallas/Ver_estado_de_los_servicios.sh
 
 ## Definicion de pantallas
 
@@ -54,10 +56,14 @@ function Servicios() {
     echo "${CYAN}########################################################${NORMAL}"
     echo "${YELLOW} 1 - ${NORMAL} Ver estado de los servicios"
     echo "${YELLOW} 2 - ${NORMAL} Parar o deshabilitar un servicio"
-    echo "${YELLOW} 1 - ${NORMAL} Iniciar o habilitar un servicio"
+    echo "${YELLOW} 3 - ${NORMAL} Iniciar o habilitar un servicio"
     echo "${YELLOW} q - ${NORMAL} SALIR"
     read -s -n 1 option
     case $option in
+        1)
+            Ver_estado_de_los_servicios
+            Servicios
+            ;;
         'q')
             Main_menu
             ;;
