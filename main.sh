@@ -1,10 +1,14 @@
 #!/bin/bash
 
-## Source a las dependencias
+## Hacer "source" a las dependencias
 
 source functions/colors.def
 source functions/nombres_servicios.def
 source sub_pantallas/Ver_estado_de_los_servicios.sh
+source sub_pantallas/parar_o_deshabilitar_un_servicio.sh
+source sub_pantallas/iniciar_o_habilitar_un_servicio.sh
+source sub_pantallas/ver_logs_acceso.sh
+source sub_pantallas/monitoreo_de_recursos.sh
 
 ## Definicion de pantallas
 
@@ -17,7 +21,7 @@ function Main_menu() {
     echo "${MAGENTA}########################################################${NORMAL}"
     echo "${YELLOW} 1 - ${NORMAL} Administracion de cuentas de usuario y grupos"
     echo "${YELLOW} 2 - ${NORMAL} Administracion de Informix DBMS"
-    echo "${YELLOW} 3 - ${NORMAL} Monitoreo de Recuros"
+    echo "${YELLOW} 3 - ${NORMAL} Monitoreo de Recursos"
     echo "${YELLOW} 4 - ${NORMAL} Monitoreo de acceso al servidor"
     echo "${YELLOW} 5 - ${NORMAL} Servicios"
     echo "${YELLOW} q - ${NORMAL} SALIR"
@@ -64,6 +68,14 @@ function Servicios() {
             Ver_estado_de_los_servicios
             Servicios
             ;;
+        2)
+            parar_o_deshabilitar_un_servicio
+            Servicios
+            ;;
+        3)
+            iniciar_o_habilitar_un_servicio
+            Servicios
+            ;;
         'q')
             Main_menu
             ;;
@@ -73,6 +85,7 @@ function Servicios() {
     esac
     
 }
+
 
 function Monitoreo_de_acceso_al_servidor() {
     clear
@@ -84,6 +97,10 @@ function Monitoreo_de_acceso_al_servidor() {
     echo "${YELLOW} q - ${NORMAL} SALIR"
     read -s -n 1 option
     case $option in
+        1)
+            ver_logs_acceso
+            Monitoreo_de_acceso_al_servidor
+            ;;
         'q')
             Main_menu
             ;;
@@ -104,6 +121,10 @@ function Monitoreo_de_Recuros() {
     echo "${YELLOW} q - ${NORMAL} SALIR"
     read -s -n 1 option
     case $option in
+        1)
+            monitoreo_de_recursos
+            Main_menu
+            ;;
         'q')
             Main_menu
             ;;
