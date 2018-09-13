@@ -25,9 +25,9 @@ function parar_o_deshabilitar_un_servicio() {
     printf "\n"
 
     [[ "$detener" == "s" ]] && systemctl stop $service_name || echo "No se ha detenido ningun servicio"
-    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}detener${NORMAL} el servicio!!"
+    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}detener${NORMAL} el servicio!!"  || echo "${GREEN}EXITO!${NORMAL}"
     [[ "$deshabilitar" == "s" ]] && systemctl disable $service_name || echo "No se ha deshabilitado ningun servicio"
-    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}deshabilitar${NORMAL} el servicio!!"
+    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}deshabilitar${NORMAL} el servicio!!"  || echo "${GREEN}EXITO!${NORMAL}"
     
     read -s -n 1
     return

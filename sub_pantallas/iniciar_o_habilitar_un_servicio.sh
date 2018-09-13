@@ -25,9 +25,9 @@ function iniciar_o_habilitar_un_servicio() {
     printf "\n"
 
     [[ "$iniciar" == "s" ]] && systemctl stop $service_name || echo "No se ha iniciado ningun servicio"
-    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}iniciar${NORMAL} el servicio!!" || 
+    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}iniciar${NORMAL} el servicio!!" || echo "${GREEN}EXITO!${NORMAL}"
     [[ "$habilitar" == "s" ]] && systemctl disable $service_name || echo "No se ha habilitado ningun servicio"
-    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}habilitar${NORMAL} el servicio!!"
+    [[ $? -ne 0 ]] && echo "Algo ha ${RED}fallado${NORMAL} al intentar ${YELLOW}habilitar${NORMAL} el servicio!!"  || echo "${GREEN}EXITO!${NORMAL}"
     
     read -s -n 1
     return

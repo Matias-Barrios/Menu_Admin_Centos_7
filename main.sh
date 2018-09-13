@@ -9,6 +9,7 @@ source sub_pantallas/parar_o_deshabilitar_un_servicio.sh
 source sub_pantallas/iniciar_o_habilitar_un_servicio.sh
 source sub_pantallas/ver_logs_acceso.sh
 source sub_pantallas/monitoreo_de_recursos.sh
+source sub_pantallas/alta_usuario.sh
 
 ## Definicion de pantallas
 
@@ -174,6 +175,10 @@ function Administracion_de_cuentas_de_usuario() {
     echo "${YELLOW} q - ${NORMAL} SALIR"
     read -s -n 1 option
     case $option in
+        1)
+            alta_usuario
+            Administracion_de_cuentas_de_usuario
+            ;;
         'q')
             Main_menu
             ;;
