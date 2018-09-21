@@ -170,13 +170,23 @@ function Administracion_de_cuentas_de_usuario() {
     echo "${YELLOW} 2 - ${NORMAL} Alta Grupo"
     echo "${YELLOW} 3 - ${NORMAL} Baja Usuario"
     echo "${YELLOW} 4 - ${NORMAL} Baja Grupo"
-    echo "${YELLOW} 5 - ${NORMAL} Modificacion Usuario"
-    echo "${YELLOW} 6 - ${NORMAL} Modificacion Grupos"
     echo "${YELLOW} q - ${NORMAL} SALIR"
     read -s -n 1 option
     case $option in
         1)
             alta_usuario
+            Administracion_de_cuentas_de_usuario
+            ;;
+        2)
+            alta_grupo
+            Administracion_de_cuentas_de_usuario
+            ;;
+        3)
+            baja_usuario
+            Administracion_de_cuentas_de_usuario
+            ;;
+        3)
+            baja_grupo
             Administracion_de_cuentas_de_usuario
             ;;
         'q')
