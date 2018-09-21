@@ -10,6 +10,13 @@ source sub_pantallas/iniciar_o_habilitar_un_servicio.sh
 source sub_pantallas/ver_logs_acceso.sh
 source sub_pantallas/monitoreo_de_recursos.sh
 source sub_pantallas/alta_usuario.sh
+source sub_pantallas/alta_grupo.sh
+source sub_pantallas/baja_usuario.sh
+source sub_pantallas/baja_grupo.sh
+source sub_pantallas/informix_ver.sh
+source sub_pantallas/informix_parar.sh
+source sub_pantallas/informix_iniciar.sh
+
 
 ## Definicion de pantallas
 
@@ -145,11 +152,22 @@ function Administracion_de_Informix_DBMS() {
     echo "${YELLOW} 1 - ${NORMAL} Ver status"
     echo "${YELLOW} 2 - ${NORMAL} Parar"
     echo "${YELLOW} 3 - ${NORMAL} Iniciar"
-    echo "${YELLOW} 4 - ${NORMAL} Baja Grupo"
     echo "${YELLOW} 5 - ${NORMAL} Realizar respaldo AHORA"
     echo "${YELLOW} q - ${NORMAL} SALIR"
     read -s -n 1 option
     case $option in
+        1)
+            informix_ver
+            Administracion_de_Informix_DBMS
+            ;;
+        2)
+            informix_parar
+            Administracion_de_Informix_DBMS
+            ;;
+        3)
+            informix_iniciar
+            Administracion_de_Informix_DBMS
+            ;;
         'q')
             Main_menu
             ;;
