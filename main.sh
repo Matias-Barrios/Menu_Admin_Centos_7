@@ -16,8 +16,7 @@ source sub_pantallas/baja_grupo.sh
 source sub_pantallas/informix_ver.sh
 source sub_pantallas/informix_parar.sh
 source sub_pantallas/informix_iniciar.sh
-
-
+source sub_pantallas/realizar_backup.sh
 
 ## Definicion de pantallas
 
@@ -33,23 +32,33 @@ function Main_menu() {
     echo "${YELLOW} 3 - ${NORMAL} Monitoreo de Recursos"
     echo "${YELLOW} 4 - ${NORMAL} Monitoreo de acceso al servidor"
     echo "${YELLOW} 5 - ${NORMAL} Servicios"
+    echo "${YELLOW} 6 - ${NORMAL} Realizar backup ahora"
     echo "${YELLOW} q - ${NORMAL} SALIR"
     read -s -n 1 option
     case $option in
         1) 
             Administracion_de_cuentas_de_usuario
+            Main_menu
             ;;
         2) 
             Administracion_de_Informix_DBMS
+            Main_menu
             ;;
         3) 
             Monitoreo_de_Recuros
+            Main_menu
             ;;
         4) 
             Monitoreo_de_acceso_al_servidor
+            Main_menu
             ;;
         5) 
             Servicios
+            Main_menu
+            ;;
+        6) 
+            realizar_backup
+            Main_menu
             ;;
         'q')
             clear
