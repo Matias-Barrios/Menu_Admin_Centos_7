@@ -2,9 +2,9 @@
 
 ## Hacer "source" a las dependencias
 
-source functions/colors.def
-source functions/nombres_servicios.def
-source sub_pantallas/Ver_estado_de_los_servicios.sh
+source functions/colors.def 
+source functions/nombres_servicios.def 
+source sub_pantallas/Ver_estado_de_los_servicios.sh 
 source sub_pantallas/parar_o_deshabilitar_un_servicio.sh
 source sub_pantallas/iniciar_o_habilitar_un_servicio.sh
 source sub_pantallas/ver_logs_acceso.sh
@@ -16,6 +16,7 @@ source sub_pantallas/baja_grupo.sh
 source sub_pantallas/informix_ver.sh
 source sub_pantallas/informix_parar.sh
 source sub_pantallas/informix_iniciar.sh
+
 
 
 ## Definicion de pantallas
@@ -180,7 +181,6 @@ function Administracion_de_Informix_DBMS() {
 
 function Administracion_de_cuentas_de_usuario() {
     clear
-
     echo "${CYAN}########################################################${NORMAL}"
     echo "${GREEN} Administracion de cuentas de usuario y grupos ${NORMAL}"
     echo "${CYAN}########################################################${NORMAL}"

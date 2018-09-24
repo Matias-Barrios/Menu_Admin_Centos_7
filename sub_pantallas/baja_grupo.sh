@@ -15,7 +15,7 @@ function baja_usuario() {
     
 
   
-    if [[ "$nombre_grupo" !~ [a-z]{1,10} ]]
+    if [[ ! "$nombre_grupo" =~ [a-z]{1,10} ]]
     then   
         echo "El nombre de grupo ${RED}no tiene un formato correcto!! ${NORMAL}" 
         read -s -n 1

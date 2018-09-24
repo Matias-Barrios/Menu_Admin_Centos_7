@@ -14,7 +14,7 @@ function baja_usuario() {
     printf "\n"
     
 
-   if [[ "$nombre_usuario" !~ [a-z]{1,10}[_]?[a-z]{0,10} ]]
+   if [[ ! "$nombre_usuario" =~ [a-z]{1,10}[_]?[a-z]{0,10} ]]
     then   
         echo "El nombre de usuario ${RED}no tiene un formato correcto!! ${NORMAL}" 
         read -s -n 1
